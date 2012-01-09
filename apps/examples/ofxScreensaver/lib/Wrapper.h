@@ -20,7 +20,7 @@
 #if defined(_LANGUAGE_C_PLUS_PLUS) || defined(__cplusplus)
 extern "C" {
 #endif
-void init();
+void init(const char *resPath);
 void display();
 void idle_cb();
 void setup();

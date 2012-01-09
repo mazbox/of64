@@ -859,6 +859,7 @@
 				EA1A4C2E14B74A310090BC2B /* Headers */,
 				EA1A4C2F14B74A310090BC2B /* Resources */,
 				EA1A4C3014B74A310090BC2B /* Rez */,
+				EAB1129214BB4DDE0036AC83 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -935,6 +936,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EAB1129214BB4DDE0036AC83 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "cp -r bin/data \"$TARGET_BUILD_DIR/$PRODUCT_NAME.saver/Contents/Resources\";";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA1A4C2C14B74A310090BC2B /* Sources */ = {

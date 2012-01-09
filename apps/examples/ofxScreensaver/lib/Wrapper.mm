@@ -7,16 +7,22 @@
 #include "Wrapper.h"
 #include "ofxAppMacScreenSaver.h"
 #include "main.h"
+#include <string>
+using namespace std;
 
 ofxAppMacScreenSaver *screensaver;
+string dataPath = "";
 
-void init() {
+void init(const char *resPath) {
 	screensaver = ofxScreensaver_main();
+	dataPath = resPath;
 }
 void setup() {
 
 
-	screensaver->setupOpenGL(0, 0, 0);//, <#int h#>, <#int screenMode#>)
+
+	screensaver->setupOpenGL(1440, 900, 0, dataPath);//, <#int h#>, <#int screenMode#>)
+	
 	screensaver->initializeWindow();
 	
 }

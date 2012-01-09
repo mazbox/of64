@@ -17,8 +17,8 @@
 
 #pragma once
 
-
-
+#include <string>
+using namespace std;
 class ofBaseApp;
 
 class ofxAppMacScreenSaver {
@@ -28,7 +28,7 @@ public:
 	ofxAppMacScreenSaver();
 	~ofxAppMacScreenSaver(){}
 	
-	void setupOpenGL(int w, int h, int screenMode);
+	void setupOpenGL(int w, int h, int screenMode, string dataPath);
 	void initializeWindow();
 	void runAppViaInfiniteLoop(ofBaseApp * appPtr);
 	void setApp(ofBaseApp *app);

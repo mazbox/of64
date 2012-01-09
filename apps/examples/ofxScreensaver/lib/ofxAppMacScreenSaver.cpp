@@ -87,7 +87,7 @@ public:
 	int getHeight() { return 900; }
 };
 //------------------------------------------------------------
-void ofxAppMacScreenSaver::setupOpenGL(int w, int h, int screenMode){
+void ofxAppMacScreenSaver::setupOpenGL(int w, int h, int screenMode, string dataPath){
 	static ofPtr<ofAppBaseWindow> window;	
 	window = ofPtr<ofAppBaseWindow>(new ofxScreensaverWindow());
 	ofSetupOpenGL(window, w, h, screenMode);
@@ -100,6 +100,7 @@ void ofxAppMacScreenSaver::setupOpenGL(int w, int h, int screenMode){
 	windowMode = screenMode;
 	bNewScreenMode = true;
 	ofSetCurrentRenderer(ofPtr<ofBaseRenderer>(new ofGLRenderer(false)));
+	ofSetDataPathRoot(dataPath+"/data/");
 	ofNotifySetup();
 	ofAppPtr->setup();	
 	//windowW = glutGet(GLUT_WINDOW_WIDTH);

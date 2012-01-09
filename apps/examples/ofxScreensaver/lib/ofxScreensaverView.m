@@ -35,7 +35,8 @@
 			[self autorelease];
 			return nil;
 		} 
-		init();
+		unsigned char *s = [[[NSBundle bundleForClass:[self class]] resourcePath] UTF8String];
+		init(s);
 		[self addSubview:glView]; 
 		[[glView openGLContext] makeCurrentContext];
 		
@@ -94,7 +95,6 @@
 - (void)animateOneFrame
 {
 	
-	printf("Animage\n");
 	idle_cb();
 	// Redraw
 	[self setNeedsDisplay:YES];

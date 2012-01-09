@@ -28,4 +28,5 @@ public:
 	ofxQTKitVideoGrabber vidGrabber;
 	ofxCvColorImage colorImg;
 	ofxCvGrayscaleImage greyImg;
+	ofImage dataPathTest;
 };

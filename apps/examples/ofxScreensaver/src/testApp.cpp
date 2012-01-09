@@ -13,6 +13,12 @@ void testApp::setup() {
 	vidGrabber.setUseTexture(true);
 	colorImg.allocate(640, 480);
 	greyImg.allocate(640, 480);
+	string s = ofToDataPath("ophelia.png", true);
+	ofstream myfile;
+	myfile.open ("/Users/marek/example.txt");
+	myfile << s<<endl;
+	myfile.close();
+	dataPathTest.loadImage("ophelia.png");
 }
 
 void testApp::update() {
@@ -35,4 +41,5 @@ void testApp::draw() {
 		vidGrabber.draw(0, 0);
 
 	greyImg.draw(640, 0);
+	dataPathTest.draw(0, 480);
 }
