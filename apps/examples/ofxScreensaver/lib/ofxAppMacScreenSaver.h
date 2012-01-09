@@ -60,5 +60,6 @@ public:
 	
 	// call this when frame size has changed
 	void resize_cb(int w, int h);
+
 };
 

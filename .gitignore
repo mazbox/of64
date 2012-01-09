@@ -1,4 +1,8 @@
 libs/openFrameworksCompiled/project/osx/build/*
 .DS_Store
 apps/examples/Creatures
+addons/tricks
+addons/msalibs
+addons/ofxXmlSettings
+addons/ofxCvOpticalFlowLK
 

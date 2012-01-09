@@ -83,13 +83,16 @@ ofxAppMacScreenSaver::ofxAppMacScreenSaver(){
 #include "ofAppBaseWindow.h"
 class ofxScreensaverWindow: public ofAppBaseWindow {
 public:
-	int getWidth() { return 1440; }
-	int getHeight() { return 900; }
+	int getWidth() { return w; }
+	int getHeight() { return h; }
+	int w;
+	int h;
+	ofxScreensaverWindow(int w, int h) { this->w = w; this->h = h; }
 };
 //------------------------------------------------------------
 void ofxAppMacScreenSaver::setupOpenGL(int w, int h, int screenMode, string dataPath){
 	static ofPtr<ofAppBaseWindow> window;	
-	window = ofPtr<ofAppBaseWindow>(new ofxScreensaverWindow());
+	window = ofPtr<ofAppBaseWindow>(new ofxScreensaverWindow(w, h));
 	ofSetupOpenGL(window, w, h, screenMode);
 	int argc = 1;
 	char *argv = (char*)"openframeworks";

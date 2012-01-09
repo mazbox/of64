@@ -16,11 +16,28 @@
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
 		NSOpenGLPixelFormatAttribute attributes[] = { 
-			NSOpenGLPFAAccelerated,
+		/*	NSOpenGLPFAAccelerated,
 			NSOpenGLPFADepthSize, 16,
 			NSOpenGLPFAMinimumPolicy,
 			NSOpenGLPFAClosestPolicy,
-			0 };  
+			0
+		 
+		 
+		 */
+		
+			NSOpenGLPFAAccelerated,
+			NSOpenGLPFADoubleBuffer,
+			NSOpenGLPFAMultiScreen,
+			NSOpenGLPFADepthSize, 24,
+			NSOpenGLPFAAlphaSize, 8,
+			NSOpenGLPFAColorSize, 32,
+			NSOpenGLPFANoRecovery,
+			0
+		
+		};  
+		
+		
+		
 		NSOpenGLPixelFormat *format;
 		
 		format = [[[NSOpenGLPixelFormat alloc] 
@@ -40,10 +57,14 @@
 		[self addSubview:glView]; 
 		[[glView openGLContext] makeCurrentContext];
 		
+		// enable vertical sync
+		GLint i = 1;
+		[[glView openGLContext] setValues:&i forParameter:NSOpenGLCPSwapInterval];
+		
 		// do setupping
 		setup();
 		
-        [self setAnimationTimeInterval:1/30.0];
+        [self setAnimationTimeInterval:1/60.0];
     }
     return self;
 }
@@ -67,15 +88,8 @@
 	// now do drawing
 	display();
 	
-	/*glColor4f(1, 0, 1, 1);
-	glBegin(GL_QUADS);
-	glVertex2f(-10, -10);
-	glVertex2f(10, -10);
-	glVertex2f(10, 10);
-	glVertex2f(-10, 10);
-	glEnd();*/
-
-	glFlush(); 
+	[[glView openGLContext] flushBuffer];
+//	glFlush(); 
 }
 
 

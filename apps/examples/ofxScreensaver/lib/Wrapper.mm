@@ -8,6 +8,7 @@
 #include "ofxAppMacScreenSaver.h"
 #include "main.h"
 #include <string>
+#import <AppKit/AppKit.h>
 using namespace std;
 
 ofxAppMacScreenSaver *screensaver;
@@ -19,9 +20,9 @@ void init(const char *resPath) {
 }
 void setup() {
 
+	NSScreen *mainScreen = [NSScreen mainScreen];
 
-
-	screensaver->setupOpenGL(1440, 900, 0, dataPath);//, <#int h#>, <#int screenMode#>)
+	screensaver->setupOpenGL([mainScreen frame].size.width, [mainScreen frame].size.height, 0, dataPath);//, <#int h#>, <#int screenMode#>)
 	
 	screensaver->initializeWindow();
 	
