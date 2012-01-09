@@ -17,10 +17,15 @@
 
 #pragma once
 #include "ofMain.h"
+#include "ofxQTKitVideoGrabber.h"
+#include "ofxOpenCv.h"
+
 class testApp: public ofBaseApp {
 public:
 	void setup();
 	void update();
 	void draw();
-	
+	ofxQTKitVideoGrabber vidGrabber;
+	ofxCvColorImage colorImg;
+	ofxCvGrayscaleImage greyImg;
 };

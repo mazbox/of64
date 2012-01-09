@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+
 #import <ScreenSaver/ScreenSaver.h>
 #import "MyOpenGLView.h"
 @interface ofxScreensaverView : ScreenSaverView
