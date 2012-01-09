@@ -1,0 +1,7 @@
+of64 - openframeworks for 64 bit mac
+====================================
+
+Here is a version of oF 007 with all the i386 dependencies removed, and some of the static libraries
+recompiled for 64 bit. No FMOD, no Cairo, no Quicktime.
+
+There is a very crude example of a (Lion compatible) screensaver in there too.
