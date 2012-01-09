@@ -1,8 +1,8 @@
 #include "testApp.h"
-
+ofSoundPlayer soundPlayer;
 //--------------------------------------------------------------
 void testApp::setup(){
-
+	soundPlayer.loadSound("test.wav");
 }
 
 //--------------------------------------------------------------
@@ -17,7 +17,8 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-
+	soundPlayer.play();
+	printf("Playing\n");
 }
 
 //--------------------------------------------------------------
@@ -37,7 +38,7 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-
+	
 }
 
 //--------------------------------------------------------------

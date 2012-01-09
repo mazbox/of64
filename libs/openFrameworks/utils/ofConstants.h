@@ -244,7 +244,6 @@ typedef TESSindex ofIndexType;
   #endif
 #endif
 
-#undef OF_SOUND_PLAYER_FMOD
 // comment out this line to disable all poco related code
 #define OF_USING_POCO
 

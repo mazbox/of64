@@ -2,6 +2,12 @@ of64 - openframeworks for 64 bit mac
 ====================================
 
 Here is a version of oF 007 with all the i386 dependencies removed, and some of the static libraries
-recompiled for 64 bit. No FMOD, no Cairo, no Quicktime.
+recompiled for 64 bit. No Cairo, no Quicktime, although you can use ofxQTKitVideoGrabber and 
+ofxQTKitVideoPlayer in lieu.
 
 There is a very crude example of a (Lion compatible) screensaver in there too.
+
+Note:
+When distributing screensavers, you need to change the name of the classes to make it unique in the 
+list of screensavers - that means changing the names of every instance of MyOpenGLView and
+ofxScreensaverView - just do a multi-file search and replace. Change them to any name you like.
