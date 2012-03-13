@@ -118,6 +118,7 @@ void testApp::mouseReleased(int x, int y, int button){
 //--------------------------------------------------------------
 void testApp::exit() {
     cout << "testApp :: exit : " << endl;
+    vidGrabber.close();
 }
 
 
