@@ -87,6 +87,10 @@ void ofRunApp(ofBaseApp * OFSA){
 	window->runAppViaInfiniteLoop(OFSAptr.get());
 }
 
+ofPtr<ofAppBaseWindow> ofGetWindowPtr() {
+	return window;
+}
+
 //--------------------------------------
 void ofSetupOpenGL(ofPtr<ofAppBaseWindow> windowPtr, int w, int h, int screenMode){
 	window = windowPtr;
