@@ -228,7 +228,7 @@ static bool loadImage(ofPixels_<PixelType> & pix, const ofBuffer & buffer){
 	//get the file type!
 	FREE_IMAGE_FORMAT fif = FreeImage_GetFileTypeFromMemory(hmem);
 	if( fif == -1 ){
-		ofLog(OF_LOG_ERROR, "unable to guess format", fif);
+		ofLog(OF_LOG_ERROR, "loadImage :: unable to guess format", fif);
 		return false;
 		FreeImage_CloseMemory(hmem);
 	}

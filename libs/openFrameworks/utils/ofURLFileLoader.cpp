@@ -146,8 +146,10 @@ ofHttpResponse ofURLFileLoader::handleRequest(ofHttpRequest request) {
 		HTTPResponse res;
 		istream& rs = session.receiveResponse(res);
 		if(!request.saveTo){
+            ofLog(OF_LOG_ERROR, "ofURLFileLoader :: handleRequest : !request.saveTo!");
 			return ofHttpResponse(request,rs,res.getStatus(),res.getReason());
 		}else{
+            ofLog(OF_LOG_ERROR, "ofURLFileLoader :: handleRequest : request.saveTo");
 			ofFile saveTo(request.name,ofFile::WriteOnly);
 			char aux_buffer[1024];
 			rs.read(aux_buffer, 1024);

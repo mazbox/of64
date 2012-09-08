@@ -556,7 +556,7 @@ void ofFbo::unbind() {
 
 
 int ofFbo::getNumTextures() {
-	return textures.size();
+	return (int)textures.size();
 }
 
 void ofFbo::setDefaultTextureIndex(int defaultTexture)
